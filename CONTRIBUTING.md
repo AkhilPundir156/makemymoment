@@ -29,7 +29,7 @@ main-fix-auth-bug-akhil
 ```
 git push origin main-issue-name-your-name
 ```
-#### 6. Create a Pull Request on GitHub and reference the issue.
+#### 6. Create a Pull Request on GitHub and reference the issue
 ---
 Please ensure your commit message and PR description clearly explain your changes.
 Thank you for contributing to Make Moment! 🎉
