@@ -1,4 +1,3 @@
----
 ### 🤝 Contributing
 We welcome contributions! Please follow these steps:
 #### 1. Pick an issue from the repository issues list.
@@ -20,9 +19,11 @@ main-fix-auth-bug-akhil
 
 [REM] dashboard: removed login component.
 
-[REF] cli: refactored cli tools
+[REF] cli: refactored cli tools.
 
-[IMP] ext: improved extension ui
+[IMP] ext: improved extension ui.
+
+[REF] *: refactored all module code.
 ```
 #### 5. Push your branch.
 ```
