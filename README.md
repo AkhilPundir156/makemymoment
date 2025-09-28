@@ -1,51 +1,58 @@
-Hello Welcome to Make Moment.# Moment Recorder
+# Turborepo Tailwind CSS starter
 
-**Moment Recorder** is a full-featured screen recording platform with a **CLI tool**, **browser extension**, and **web dashboard**.  
-It allows users to record, upload, and share screen recordings seamlessly using a scalable backend and cloud storage.
+This Turborepo starter is maintained by the Turborepo core team.
 
----
+## Using this example
 
-## 📂 Project Structure
+Run the following command:
 
-```
-make-moment/
-├── dashboard/ # React.js frontend → Vercel
-├── server/ # API service → Render
-├── cli/ # CLI tool → npm package
-├── extension/ # Browser extension → Chrome
-└── addons/ # Shared utilities and types
+```sh
+npx create-turbo@latest -e with-tailwind
 ```
 
+## What's inside?
 
-Each folder contains its own `README.md` describing its purpose and usage.
+This Turborepo includes the following packages/apps:
 
----
+### Apps and Packages
 
-## 🚀 Features
+- `docs`: a [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
+- `web`: another [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
+- `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/) shared by both `web` and `docs` applications
+- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
-- **CLI Tool:** Record, upload, and manage screen recordings from the terminal.  
-- **Browser Extension:** Record screens or tabs directly from the browser.  
-- **Web Dashboard:** Manage recordings, playback videos, and generate shareable links.  
-- **Server API:** Handles authentication, presigned S3 uploads, and metadata storage.  
-- **Cloud Storage:** AWS S3 for storing recordings.  
+Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
----
+### Building packages/ui
 
-## ⚡ Quick Start
+This example is set up to produce compiled styles for `ui` components into the `dist` directory. The component `.tsx` files are consumed by the Next.js apps directly using `transpilePackages` in `next.config.ts`. This was chosen for several reasons:
 
-1. Clone the repo:
-```bash
-git clone https://github.com/AkhilPundir156/makemoment.git
+- Make sharing one `tailwind.config.ts` to apps and packages as easy as possible.
+- Make package compilation simple by only depending on the Next.js Compiler and `tailwindcss`.
+- Ensure Tailwind classes do not overwrite each other. The `ui` package uses a `ui-` prefix for it's classes.
+- Maintain clear package export boundaries.
 
-Install dependencies in each folder as needed.
+Another option is to consume `packages/ui` directly from source without building. If using this option, you will need to update the `tailwind.config.ts` in your apps to be aware of your package locations, so it can find all usages of the `tailwindcss` class names for CSS compilation.
 
-Follow individual README.md in dashboard/, backend/, cli/, or extension/ to run or deploy.
+For example, in [tailwind.config.ts](packages/tailwind-config/tailwind.config.ts):
 
+```js
+  content: [
+    // app content
+    `src/**/*.{js,ts,jsx,tsx}`,
+    // include packages if not transpiling
+    "../../packages/ui/*.{js,ts,jsx,tsx}",
+  ],
 ```
-📌 Notes
 
-Backend handles auth, presigned uploads, and DB logging.
+If you choose this strategy, you can remove the `tailwindcss` and `autoprefixer` dependencies from the `ui` package.
 
-CLI and Extension upload directly to S3; backend only orchestrates requests.
+### Utilities
 
-Each subfolder is deployable separately.
+This Turborepo has some additional tools already setup for you:
+
+- [Tailwind CSS](https://tailwindcss.com/) for styles
+- [TypeScript](https://www.typescriptlang.org/) for static type checking
+- [ESLint](https://eslint.org/) for code linting
+- [Prettier](https://prettier.io) for code formatting
