@@ -1,11 +1,5 @@
-@import "tailwindcss";
-
-:root{
-
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-
+:root,
+.dark {
   --primary-text-color: rgb(255, 255, 255);
   --secondary-text-color: rgb(247, 247, 247);
   --tertiary-text-color: #C0c0c0;

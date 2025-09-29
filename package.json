@@ -1,5 +1,5 @@
 {
-  "name": "with-tailwind",
+  "name": "makemymoment",
   "private": true,
   "scripts": {
     "build": "turbo run build",
