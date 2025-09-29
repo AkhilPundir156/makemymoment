@@ -15,6 +15,7 @@
       "@makemymoment/tailwind-config/*": [
         "../../packages/tailwind-config/*"
       ],
+      "@makemymoment/types": ["../../packages/types"]
     },
     "target": "ES2017",
     "lib": [

@@ -1,7 +1,3 @@
 export default function Page() {
-  return (
-    <main className=""> 
-        Hello this is main div
-    </main>
-  );
+    return <main className="bg-primary-dot">Hello this is main div</main>;
 }
