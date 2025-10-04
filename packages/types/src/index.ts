@@ -1,14 +1,15 @@
-export interface User {
-    id: string;
+export interface IUser {
     name: string;
-    email: string;
-    createdAt: string;
+    emailId: string;
+    googleId: string;
+    image?: string;
+    cliSecret: string;
 }
 
-export type Role = "admin" | "editor" | "viewer";
-
-export interface ApiResponse<T> {
-    success: boolean;
-    data: T;
-    error?: string;
+export interface IVideo {
+    userId: IUser;
+    videoUrl: string;
+    shareVideUrl: string;
+    publicVisibility: Boolean;
+    videDescription: string;
 }

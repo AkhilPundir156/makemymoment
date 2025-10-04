@@ -9,13 +9,15 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
+      "@web/*": ["./*"],
       "@makemymoment/ui/*": [
         "../../packages/ui/src/*"
       ],
       "@makemymoment/tailwind-config/*": [
         "../../packages/tailwind-config/*"
       ],
-      "@makemymoment/types": ["../../packages/types"]
+      "@makemymoment/types": ["../../packages/types"],
+      "@makemymoment/utils/*": ["../../packages/utils/src/*"],
     },
     "target": "ES2017",
     "lib": [

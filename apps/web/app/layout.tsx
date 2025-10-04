@@ -1,11 +1,10 @@
+import { SessionProvider } from "next-auth/react";
 import type { Metadata } from "next";
-import type { User } from "@makemymoment/types";
-
 
 import "@makemymoment/tailwind-config/styles.css";
 import "./globals.css";
 
-const user: User = {
+const user = {
     id: "1",
     name: "John Doe",
     email: "john@doe.com",
@@ -20,9 +19,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-
-            <body className="bg-primary-dot">{children}
-                <p>{user.name}</p>
+            <body className="bg-primary-bg">
+                <SessionProvider>{children}</SessionProvider>
             </body>
         </html>
     );
