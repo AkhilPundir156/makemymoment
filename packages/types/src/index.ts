@@ -1,9 +1,10 @@
 export interface IUser {
     name: string;
     emailId: string;
-    googleId: string;
     image?: string;
     cliSecret: string;
+    createdAt: Date;
+    updatedAt: Date;
 }
 
 export interface IVideo {
@@ -12,4 +13,13 @@ export interface IVideo {
     shareVideUrl: string;
     publicVisibility: Boolean;
     videDescription: string;
+    createdAt: Date;
+    updatedAt: Date;
+}
+
+export interface nextUser {
+    id: string;
+    name: string;
+    email: string;
+    image?: string;
 }

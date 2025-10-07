@@ -8,10 +8,14 @@
         "build": "tsc -b"
     },
     "exports": {
-      "./config": "./src/config.ts"
+        "./config": "./src/config.ts",
+        "./validmongo": "./src/validmongo.ts"
     },
     "devDependencies": {
         "@makemymoment/typescript-config": "*",
         "@types/node": "^24.6.0"
+    },
+    "dependencies": {
+        "mongoose": "^8.18.3"
     }
 }
