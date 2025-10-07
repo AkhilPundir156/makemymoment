@@ -13,11 +13,6 @@ const userSchema = new Schema<IUser>(
             require: true,
             unique: true,
         },
-        googleId: {
-            type: String,
-            require: true,
-            unique: true,
-        },
         image: {
             type: String,
         },
